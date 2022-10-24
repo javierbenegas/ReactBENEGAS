@@ -1,0 +1,6 @@
+.navbar-style {
+    flex-basis: 100%;
+    flex-grow: 1;
+    align-items: center;
+    color: antiquewhite;
+}
