@@ -1,10 +1,25 @@
-import React from 'react'
-import "./itemlistcontainer.css";
+import React, {useState, useEffect} from 'react';
+import ItemList from './ItemList';
+import getItemsFromAPI from '../../mockService/mockService';
+import FlexWrapper from '../FlexWrapper/FlexWrapper';
 
-function ItemListContainer(props) {
+
+function ItemListContainer() {
+  let [productsList, setProductList] = useState([]);
+
+  useEffect(() => {
+    getItemsFromAPI().then((itemsDB) => {
+      setProductList(itemsDB)
+    });
+  }, []);
+
+ 
+
   return (
     <div>
-        <h1 className='textstyle'>{props.greeting}</h1>
+      <FlexWrapper>
+        <ItemList productsList={productsList}/>
+      </FlexWrapper>
     </div>
   )
 }

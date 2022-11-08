@@ -1,9 +1,10 @@
 import React from 'react'
+import {Link} from "react-router-dom"
 
 function ListElement(props) {
   return (
             <li className="nav-item"> 
-            <a className="nav-link active" aria-current="page" href="/">{props.children}</a>
+            <Link className="nav-link active" aria-current="page" to="/">{props.children}</Link>
             </li>
   )
 }
